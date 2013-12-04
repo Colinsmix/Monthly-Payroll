@@ -2,7 +2,11 @@ class Employee
   def self.import_employee_list(employee_file)
     employees = []
     CSV.foreach(employee_file, headers: true) do |line|
-      new_employee = determine_position(line)
+      employee_hash = {}
+      line.each do |x|
+        employee_hash[x[0]] = x[1]
+      end
+      new_employee = determine_position(employee_hash)
       employees << new_employee
     end
     employees
@@ -14,18 +18,18 @@ class Employee
     end
   end
 
-  def self.determine_position(line)
-    case line['position']
+  def self.determine_position(employee)
+    case employee['position']
       when 'Owner'
-        Owner.new(line['last_name'],line['first_name'],line['base_salary'],line['commission_rate'],line['quota_bonus'],line['gross_sales_quota'])
+        Owner.new(employee)
       when 'Quota_sales'
-        QuotaSalesPerson.new(line['last_name'],line['first_name'],line['base_salary'],line['commission_rate'],line['quota_bonus'],line['gross_sales_quota'])
+        QuotaSalesPerson.new(employee)
       when 'Commission_sales'
-        CommisionSalesPerson.new(line['last_name'],line['first_name'],line['base_salary'],line['commission_rate'],line['quota_bonus'],line['gross_sales_quota'])
+        CommisionSalesPerson.new(employee)
       when 'Developer'
-        Developer.new(line['last_name'],line['first_name'],line['base_salary'],line['commission_rate'],line['quota_bonus'],line['gross_sales_quota'])
+        Developer.new(employee)
       when 'Designer'
-        Designer.new(line['last_name'],line['first_name'],line['base_salary'],line['commission_rate'],line['quota_bonus'],line['gross_sales_quota'])
+        Designer.new(employee)
       else
       end
   end
