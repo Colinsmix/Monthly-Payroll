@@ -22,7 +22,8 @@ employees.each do |employee|
     employee.calculate_bonus
   end
   puts "***#{employee.first_name} #{employee.last_name}***"
-  puts "Gross Salary : #{employee.gross_salary}"
-  puts "Net Pay : #{employee.net_pay}"
+  puts "Gross Salary : #{sprintf('%.2f', employee.gross_salary)}"
+  puts "Commission Earned : #{sprintf('%.2f', employee.total_bonus - employee.total_bonus * EmployeeBase::TAX_RATE)}" if employee.class == CommissionSalesPerson
+  puts "Net Pay : #{sprintf('%.2f', employee.net_pay)}"
   puts "***"
 end

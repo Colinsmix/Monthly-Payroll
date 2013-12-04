@@ -1,8 +1,8 @@
 last_name,first_name,position,base_salary,commission_rate,quota_bonus,gross_sales_quota
 Smith,Johhny,Developer,80000,0,0,0
 McMahon,Jimmy,Developer,85000,0,0,0
-Lob,Bob,Commission_sales,50000,0.5,0,0
-Bobby,Ricky,Commission_sales,40000,1.5,0,0
+Lob,Bob,Commission_sales,50000,.005,0,0
+Bobby,Ricky,Commission_sales,40000,.015,0,0
 Krabappel,Edna,Designer,87000,0,0,0
 Groundskeeper,Willie,Quota_sales,75000,0,5000,60000
 Wiggum,Clancy,Quota_sales,80000,0,10000,80000

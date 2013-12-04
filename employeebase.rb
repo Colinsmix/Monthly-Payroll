@@ -1,6 +1,6 @@
 class EmployeeBase
   TAX_RATE = 0.30
-  attr_reader :last_name, :first_name, :base_salary, :commission_rate, :quota_bonus, :gross_sales_quota, :total_bonus
+  attr_reader :last_name, :first_name, :base_salary, :commission_rate, :quota_bonus, :gross_sales_quota, :total_bonus, :TAX_RATE
 
   def initialize(args)
     @first_name = args['first_name']
@@ -14,7 +14,7 @@ class EmployeeBase
   end
 
   def gross_salary
-    @base_salary + @total_bonus
+    @base_salary / 12 + @total_bonus
   end
 
   def net_pay

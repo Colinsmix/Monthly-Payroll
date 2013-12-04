@@ -16,7 +16,7 @@ class QuotaSalesPerson < SalesPerson
   end
 end
 
-class CommisionSalesPerson < SalesPerson
+class CommissionSalesPerson < SalesPerson
   def calculate_bonus
     @total_bonus += @monthly_sales * @commission_rate
   end

@@ -25,7 +25,7 @@ class Employee
       when 'Quota_sales'
         QuotaSalesPerson.new(employee)
       when 'Commission_sales'
-        CommisionSalesPerson.new(employee)
+        CommissionSalesPerson.new(employee)
       when 'Developer'
         Developer.new(employee)
       when 'Designer'
